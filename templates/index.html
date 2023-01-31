@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    {% if your_name %}
+        Hello {{ your_name }} !
+    {% else %}
+        Please enter your name.
+    {% endif %}
+</h1>
+    <form action="{% url 'index' %}" method="post">
+{#        as_div as_p as_table#}
+        {{ form.as_p }}
+        <button>Submit</button>
+        {% csrf_token %}
+    </form>
+</body>
+</html>
